@@ -10,7 +10,7 @@ body {
     justify-content: center;
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: darkcyan;
+    background-color: rgb(3, 69, 69);
     position: sticky;
     top: -1px;
     margin: 0;
