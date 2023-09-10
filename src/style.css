@@ -28,6 +28,7 @@ body {
     font-size: 18px;
 }
 
+
 .form-btn {
     display: flex;
     justify-content: center;
@@ -56,7 +57,7 @@ body {
     text-transform: uppercase;
     border: none;
     border-radius: 5px;
-    background-color: darkcyan;
+    background-color: rgb(161, 188, 188);
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -94,4 +95,4 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} 
