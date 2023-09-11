@@ -12,6 +12,7 @@ const elements = {
 let currentPage = 1;
 elements.form.addEventListener('submit', handlerSubmit);
 elements.btnLoad.addEventListener('click', handlerLoadMore);
+elements.btnLoad.classList.add('load-more-hidden');
 
 const lightbox = new SimpleLightbox('.gallery a');
 
@@ -36,7 +37,6 @@ async function handlerSubmit(event) {
   elements.container.innerHTML = '';
   elements.btnLoad.classList.replace('load-more', 'load-more-hidden');
   const searchInfo = elements.input.value.trim();
-  console.log(elements.input.value.trim());
   if (searchInfo === '') {
     return;
   }
@@ -50,11 +50,10 @@ async function handlerSubmit(event) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
-      elements.btnLoad.classList.replace('load-more', 'load-more-hidden');
       elements.container.innerHTML = '';
     }
     const totalPages = data.totalHits / data.hits.length;
-    console.log(totalPages);
+
     if (currentPage < totalPages) {
       elements.btnLoad.classList.replace('load-more-hidden', 'load-more');
     }
@@ -63,7 +62,6 @@ async function handlerSubmit(event) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-    elements.btnLoad.classList.replace('load-more', 'load-more-hidden');
     elements.container.innerHTML = '';
   }
 }
@@ -85,6 +83,7 @@ async function handlerLoadMore() {
     });
     if (currentPage >= data.totalHits / data.hits.length) {
       elements.btnLoad.classList.replace('load-more', 'load-more-hidden');
+      Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
     }
   } catch (err) {
     console.log(err);

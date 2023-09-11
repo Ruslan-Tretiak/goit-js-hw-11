@@ -11,7 +11,7 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: rgb(3, 69, 69);
-    position: sticky;
+    position: absolute;
     top: -1px;
     margin: 0;
 
@@ -75,6 +75,7 @@ body {
     gap: 20px;
     justify-content: center;
     margin-bottom: 20px;
+    padding-top: 65px;
 }
 
 .info-link {
