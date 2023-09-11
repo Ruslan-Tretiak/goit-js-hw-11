@@ -84,8 +84,8 @@ async function handlerLoadMore() {
     console.log('currentPage:', currentPage);
     console.log('data.totalHits:', data.totalHits);
     console.log('data.hits.length:', data.hits.length);
-    
-    if (currentPage >= data.totalHits / data.hits.length) {
+
+    if (currentPage <= data.totalHits / data.hits.length) {
       elements.btnLoad.classList.replace('load-more', 'load-more-hidden');
       Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
     }
